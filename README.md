@@ -51,16 +51,59 @@ myGraph = {
     '6': {'1': 14, '3': 2, '5': 9}
 }
 
+akGraph = {
+    'a': {'b': 5, 'c': 8, 'd': 10},
+    'b': {'a': 5, 'e': 7, 'f': 6},
+    'c': {'a': 8, 'g': 4},
+    'd': {'a': 10, 'h': 9},
+    'e': {'b': 7, 'i': 12},
+    'f': {'b': 6, 'j': 14},
+    'g': {'c': 4, 'k': 11},
+    'h': {'d': 9, 'k': 3},
+    'i': {'e': 12, 'j': 1},
+    'j': {'f': 14, 'i': 1, 'k': 2},
+    'k': {'g': 11, 'h': 3, 'j': 2}
+} # Graph with Node with letters
 # ----------------------------------------------------------------
 # SETUP NODES
 startNode = '1'  # a
 goalNode = '5'  # b
 
+# startNode = 'a'  
+# goalNode = 'j'  
+
 path, minDistance = dijkstra(myGraph, startNode, goalNode)
-print(f'The shortest distance from {startNode} to {goalNode} is {minDistance}, along the path: {path}.')
+print(f'The shortest distance from {startNode} to {goalNode} is: {minDistance}, along the path: {path}.')
 ```
 ## Output:
 
 ```
-The shortest distance from 1 to 5 is 20, along the path: 1 --> 3 --> 6 --> 5.
+# myGraph
+The shortest distance from 1 to 5 is: 20, along the path: 1 --> 3 --> 6 --> 5.
+
+# akGraph
+The shortest distance from a to j is 24, along the path: a --> d --> h --> k --> j.
+```
+
+### akGraph visualised
+```cssc
+      (5)        (8)        (10)
+    a ---- b ---- c ---- g ---- k
+    |      |      |               |
+    |      |      |               |
+    |      |      |               |
+   (10)  (7)    (4)              (11)
+    |      |      |               |
+    d ---- e      |               |
+    |             |               |
+    |             |               |
+   (9)          (12)            (3)
+    |             |               |
+    h             i              j
+    |             |               |
+    |             |               |
+   (3)          (1)             (2)
+    |             |               |
+    k ---- j ---- i ---- f ---- b
+
 ```
