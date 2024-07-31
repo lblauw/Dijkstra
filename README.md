@@ -64,6 +64,7 @@ akGraph = {
     'j': {'f': 14, 'i': 1, 'k': 2},
     'k': {'g': 11, 'h': 3, 'j': 2}
 } # Graph with Node with letters
+
 # ----------------------------------------------------------------
 # SETUP NODES
 startNode = '1'  # a
@@ -86,24 +87,5 @@ The shortest distance from a to j is 24, along the path: a --> d --> h --> k -->
 ```
 
 ### akGraph visualised
-```cssc
-      (5)        (8)        (10)
-    a ---- b ---- c ---- g ---- k
-    |      |      |               |
-    |      |      |               |
-    |      |      |               |
-   (10)  (7)    (4)              (11)
-    |      |      |               |
-    d ---- e      |               |
-    |             |               |
-    |             |               |
-   (9)          (12)            (3)
-    |             |               |
-    h             i              j
-    |             |               |
-    |             |               |
-   (3)          (1)             (2)
-    |             |               |
-    k ---- j ---- i ---- f ---- b
 
-```
+<img src="akGraph.png">
