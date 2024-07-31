@@ -1,10 +1,3 @@
-# Dijkstra
- A take on the world  famous "🇬🇧 [Dijkstra Algoritm](https://en.wikipedia.org/wiki/Dijkstra's_algorithm)" || 🇳🇱 "[Dijkstra's kortstepadalgoritme](https://nl.wikipedia.org/wiki/Kortstepad-algoritme)"
-
-<img src="Dijkstra_Animation.gif" width="300" height="auto">
-
-
-```python
 def dijkstra(graph, start, goal):
     univisited = {n: float('inf') for n in graph.keys()}
     univisited[start] = 0
@@ -51,16 +44,24 @@ myGraph = {
     '6': {'1': 14, '3': 2, '5': 9}
 }
 
+akGraph = {
+    'a': {'b': 5, 'c': 8, 'd': 10},
+    'b': {'a': 5, 'e': 7, 'f': 6},
+    'c': {'a': 8, 'g': 4},
+    'd': {'a': 10, 'h': 9},
+    'e': {'b': 7, 'i': 12},
+    'f': {'b': 6, 'j': 14},
+    'g': {'c': 4, 'k': 11},
+    'h': {'d': 9, 'k': 3},
+    'i': {'e': 12, 'j': 1},
+    'j': {'f': 14, 'i': 1, 'k': 2},
+    'k': {'g': 11, 'h': 3, 'j': 2}
+}
+
 # ----------------------------------------------------------------
 # SETUP NODES
-startNode = '1'  # a
-goalNode = '5'  # b
+startNode = 'a'  # a
+goalNode = 'j'  # b
 
-path, minDistance = dijkstra(myGraph, startNode, goalNode)
+path, minDistance = dijkstra(akGraph, startNode, goalNode)
 print(f'The shortest distance from {startNode} to {goalNode} is {minDistance}, along the path: {path}.')
-```
-## Output:
-
-```
-The shortest distance from 1 to 5 is 20, along the path: 1 --> 3 --> 6 --> 5.
-```
