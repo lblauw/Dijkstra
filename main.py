@@ -58,10 +58,19 @@ akGraph = {
     'k': {'g': 11, 'h': 3, 'j': 2}
 }
 
+afGraph = {
+    'A':{'B':4, 'C':5},
+    'B':{'C':11, 'A':4},
+    'C':{'A':5, 'B':11, 'E':3},
+    'D':{'B':9, 'E':13, 'F':2},
+    'E':{'D':13, 'C':3, 'F':6},	
+    'F':{'D':2, 'E':6}
+}
+
 # ----------------------------------------------------------------
 # SETUP NODES
-startNode = 'a'  # a
-goalNode = 'j'  # b
+startNode = 'A'  # a
+goalNode = 'F'  # b
 
-path, minDistance = dijkstra(akGraph, startNode, goalNode)
+path, minDistance = dijkstra(afGraph, startNode, goalNode)
 print(f'The shortest distance from {startNode} to {goalNode} is {minDistance}, along the path: {path}.')

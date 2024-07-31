@@ -84,8 +84,15 @@ The shortest distance from 1 to 5 is: 20, along the path: 1 --> 3 --> 6 --> 5.
 
 # akGraph
 The shortest distance from a to j is 24, along the path: a --> d --> h --> k --> j.
+
+# afGraph
+The shortest distance from A to F is 14, along the path: A --> C --> E --> F
 ```
 
 ### akGraph visualised
 
 <img src="akGraph.png">
+
+### afGraph visualised
+
+<img src="afGraph.png">

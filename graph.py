@@ -16,11 +16,20 @@ akGraph = {
     'k': {'g': 11, 'h': 3, 'j': 2}
 }
 
+afGraph = {
+    'A':{'B':4, 'C':5},
+    'B':{'C':11, 'A':4},
+    'C':{'A':5, 'B':11, 'E':3},
+    'D':{'B':9, 'E':13, 'F':2},
+    'E':{'D':13, 'C':3, 'F':6},	
+    'F':{'D':2, 'E':6}
+}
+
 # Maak een ongerichte grafiek
 G = nx.Graph()
 
 # Voeg randen toe met gewichten
-for node, edges in akGraph.items():
+for node, edges in afGraph.items():
     for neighbor, weight in edges.items():
         G.add_edge(node, neighbor, weight=weight)
 
@@ -41,6 +50,6 @@ edge_labels = nx.get_edge_attributes(G, 'weight')
 nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
 
 # Toon de plot
-plt.title("Dijkstra akGraph, (not to scale).")
+plt.title("Dijkstra afGraph, (not to scale).")
 plt.axis("off")  # Verberg assen
 plt.show()
